@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]><html lang="cn" class="ie ie8" xmlns:og="http://ogp.me/ns#"><![endif]-->
+<!--[if IE 9]><html lang="cn" class="ie ie9" xmlns:og="http://ogp.me/ns#"><![endif]-->
+<!--[if gte IE 10]><html lang="cn" class="ie ie-edge" xmlns:og="http://ogp.me/ns#"><![endif]-->
+<!--[if !IE]><!--> <html lang="cn" xmlns:og="http://ogp.me/ns#"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwcPUFJXGwEBUlJSDgc="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:24,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:11,2:10,3:8,4:12,5:3,6:25,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){if(window.addEventListener){var e=t("handle"),n=t("ee");t(1),window.addEventListener("click",function(){e("inc",["ck"])},!1),window.addEventListener("hashchange",function(){e("inc",["hc"])},!1),n.on("pushState-start",function(){e("inc",["ps"])})}},{1:9,ee:"QJf3ax",handle:"D5DuLP"}],6:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],7:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=Event;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:11,2:10,3:9,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t,e){function n(){return s}if(t[1]){var r=t[1];if("function"==typeof r){var s=a(r,"nr@wrapped",function(){return i(r,"fn-",n,r.name||"anonymous")});this.wrapped=t[1]=s,o.emit("initEventContext",[t,e],this.wrapped)}else"function"==typeof r.handleEvent&&i.inPlace(r,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:26,ee:"QJf3ax",gos:"7eSDFh"}],9:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:26,ee:"QJf3ax"}],10:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:26,ee:"QJf3ax"}],11:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){function r(){return a}this.ctx={};var a={"nr@context":this.ctx};o.emit("initTimerContext",[t,n],a),t[0]=i(t[0],"fn-",r,n)}var o=t("ee").create(),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:26,ee:"QJf3ax"}],12:[function(t,e){function n(){f.inPlace(this,p,"fn-",o)}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),e.hasOwnProperty("addEventListener")&&u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:8,2:26,ee:"QJf3ax"}],13:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1),u=window.XMLHttpRequest;t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof u&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:14,3:12,4:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],14:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],15:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:24,2:25,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-768.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:24,2:15,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],24:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],25:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],26:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:25,ee:"QJf3ax"}]},{},["G9z0Bl",4,13,7,6,5]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"8c32ed8b53","agent":"js-agent.newrelic.com/nr-768.min.js","transactionName":"ZwdbZkpZXENVWxZbDF5Nf0dWW0ZZW1ZNRQZSA1dTVEFGWVdLTEUGUkxLV05RV0dHAiVXDVUQUFFqXURZUU80WwZHTF5XTA==","applicationID":"2163096","errorBeacon":"bam.nr-data.net","applicationTime":272}</script>
+<meta name="robots" content="noarchive">
+<meta name="viewport" content="width=980"/>
+<title>Hi Words - A New Word Search Puzzle Game - iOS Store App Store 评论 | App Annie</title>
+<meta name="description" content="
+查看iOS Store上Hi Words - A New Word Search Puzzle Game的评论。您可以根据 App 版本、所在国家、评分和时间段的不同对所有评论进行分类。
+" />
+<meta name="keywords" content="app annie analytics store stats intelligence rankings reviews statistics market data ios apple google android" />
+<meta name="google-site-verification" content="ivCYuhXzy549wGxwC7WBt3xK68o8CBxXAmt0tWt-ork" />
+
+<meta name="apple-itunes-app" content="app-id=660004961"/>
+<meta name="google-play-app" content="app-id=com.appannie.app">
+
+
+
+    
+        <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@appannie">
+<meta name="twitter:creator" content="@appannie">
+
+    <meta name="twitter:title" content="Hi Words - A New Word Search Puzzle Game">
+    <meta property="og:title" content="Hi Words - A New Word Search Puzzle Game">
+
+
+
+    <meta name="twitter:image:src" content="https://static-s.aa-cdn.net/img/ios/689220497/44d31d15928b16a109691fcf34b15fc7">
+    <meta property="og:image" content="https://static-s.aa-cdn.net/img/ios/689220497/44d31d15928b16a109691fcf34b15fc7">
+
+
+    
+
+
+<link rel="alternate" type="application/rss+xml" title="App Annie - App Tracking &amp; Analytics" href="http://feeds.feedburner.com/askannie" />
+<link rel="apple-touch-icon-precomposed" href="https://static-s.aa-cdn.net/media/pictures/favicon-60.v-ff775b28.png" />
+<link rel="icon" type="image/png" href="https://static-s.aa-cdn.net/media/pictures/favicon.v-83fca9a0.png" />
+
+<script>
+AA_MEDIA_URL = 'https://static-s.aa-cdn.net/media/';
+AA_CMS_CONTENT_URL = 'https://static-c.aa-cdn.net/wp-content/';
+AA_BLOG_CONTENT_URL = 'https://static-s.aa-cdn.net/media/blog-content/';
+</script>
+<script>
+/* quick $ step 1/3 */
+(function() {
+var fns = __aa_fns = [];
+$ = jQuery = function(fn) {
+  if (fn.call && fn.apply) { fns.push(fn); return;
+  } else if (fn === document) {
+    return { ready: function(fn) {
+        if (fn.call && fn.apply) { fns.push(fn); }
+    } };
+  }
+  throw 'dont use $ other than ready';
+};
+$.extend = function(obj) {
+  var i=1,srcs=arguments,l=srcs.length,src,key;
+  for(;i<l;++i) { src=srcs[i];
+    for (key in src) { obj[key] = src[key]; }
+  }
+  return obj;
+};
+
+window.__lang = 'zh-cn';
+})();
+</script>
+
+
+
+
+    <link type="text/css" rel="stylesheet" href="https://static-s.aa-cdn.net/media/css/c/base.min.v-46b98276.css" />
+    
+        <link type="text/css" rel="stylesheet" href="https://static-s.aa-cdn.net/media/css/c/prod.min.v-5535a562.css" />
+
+        
+    
+
+
+
+
+
+<!-- TradeDoubler site verification 2289284 -->
+</head>
+<body class="customize-bs fix-for-bs lang-noop lang-cn section-storestats  body-page-app-reviews "
+    >
+
+
+<div id="get-started" class="get-started-container"></div>
+<div id="container" class="">
+<!--[if lt IE 10]>
+<div id="no_old_ie">
+    <h3>您的浏览器版本太旧。</h3>
+    <p>要享受更顺畅、更安全的浏览体验，请选择升级至以下浏览器：</p>
+    <div id="browser_upgrade">
+        <a href="http://www.google.com/chrome" title="Google Chrome"><img src="https://static-s.aa-cdn.net/media/pictures/browser/chrome.v-8f9bd35a.jpg" alt="Google Chrome" /></a>
+        <a href="http://www.mozilla.org/" title="Mozilla Firefox"><img src="https://static-s.aa-cdn.net/media/pictures/browser/firefox.v-fd4ea3bb.jpg" alt="Mozilla Firefox" /></a>
+        <a href="http://windows.microsoft.com/en-hk/internet-explorer/ie-11-worldwide-languages" title="Internet Explorer 11"><img src="https://static-s.aa-cdn.net/media/pictures/browser/ie11.v-fb7889f9.jpg" alt="Internet Explorer 11" /></a>
+    </div>
+</div>
+<![endif]-->
+    
+
+    
+
+
+<div class="header-v2-old">
+    <div class="header-v2-old-main-nav-wrap">
+        <div class="inner">
+            <div class="brand pull-left">
+                <a class="navbar-brand pull-left" href="/dashboard/home/">
+                    <img src="https://static-s.aa-cdn.net/media/pictures/appannie-logo.v-64ae5eec.png" alt="App Annie"/>
+                </a>
+            </div>
+
+            <ul class="main-nav prod-main-nav pull-left" id="J-main-nav">
+                <li class="nav-item">
+                    <a href="#subnav-market-data" onclick="return false;" class="aa-nav-toggle"> 市场数据 </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#subnav-analytics" onclick="return false;" class="aa-nav-toggle">Analytics</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/indexes/all-stores/report/" class="aa-nav-link">研究报告</a>
+                </li>
+            </ul>
+
+            <div class="pull-right right-nav">
+                <ul class="main-nav mkt-main-nav pull-left" id="J-main-nav-r">
+                    <li class="nav-item">
+                        <a href="#subnav-tours" onclick="return false;" class="aa-nav-toggle">产品导览</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/cn/pricing/" class="aa-nav-link">定价</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#subnav-about" onclick="return false;" class="aa-nav-toggle">关于</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="http://cn.blog.appannie.com/" class="aa-nav-link">博客</a>
+                    </li>
+                    <li class="nav-item hide">
+                        <a target="_blank" href="http://support.appannie.com" class="aa-nav-link">支持</a>
+                    </li>
+                </ul>
+
+                <div class="search-box-wrap pull-left">
+                    <form action="/search/" name="search">
+                    <ul class="search-box">
+                        <li class="dropdown selector">
+                            <span class="dropdown-toggle" role="button" data-toggle="dropdown"><span data-value="apps">应用</span> <i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></span>
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="presentation"
+                                    data-placeholder=""
+                                    data-value=""
+                                    data-vertical=""
+                                    data-market=""
+                                    data-label="">
+                                    <a role="menuitem" href="#">
+                                        
+                                        <i class="icon-aa-check"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <input type="hidden" name="vertical" value="apps">
+                        </li>
+                        <li>
+                            <input name="q" class="search-box-input"
+                                placeholder="应用或发行商"
+                                value="">
+                        </li>
+                        <li class="search-icon"><i class="icon-search fa fa-search"></i></li>
+                    </ul>
+                    </form>
+                </div>
+
+                <ul class="user-nav pull-left pull-left-space">
+
+                    <li class="nav-item dropdown nav-item-user-prefs">
+                        <a href="#" class="aa-user-prefs-toggle dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="user-display-name">Jennifer Hao</span>
+                            <span class="user-email">jennifer_hao@tianqiinfo.com</span>
+                            <i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li class="user-email">jennifer_hao@tianqiinfo.com</li>
+                            
+
+    <li class="head head-for-analytics">
+        Analytics &amp; Advertising
+    </li>
+    
+        <li><a href="/account/list/">应用商店账号</a></li>
+    
+        <li><a href="/account/apps/">应用</a></li>
+    
+        <li><a href="/account/sharing/">分享</a></li>
+    
+        <li><a href="/account/export/">备份数据</a></li>
+    
+
+    <li class="head head-for-account">
+        App Annie 账号
+    </li>
+    
+        <li><a href="/account/teams/">团队</a></li>
+    
+        <li><a href="/account/settings/">用户设置</a></li>
+    
+        <li><a href="/account/api/key/">API 密钥</a></li>
+    
+
+
+                            <li class="spacer"></li>
+                            
+                            
+                            <li class="support"><a target="_blank" href="http://support.appannie.com">支持</a></li>
+                            <li class="logout"><a href="/account/logout/">退出</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-v2-old-sub-nav-wrap"><div class="header-v2-old-sub-nav-inner">
+        <div id="subnav-analytics" class="sub-nav-drawer">
+            <div class="inner">
+                <ul class="sub-nav-item">
+                    <li class="">
+                        <a href="/comparator/">
+                            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+                            App Analytics</a>
+                    </li>
+                </ul>
+                <ul class="sub-nav-item">
+                    <li class="">
+                        <a href="/ad_dashboard/">
+                            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+                            Advertising Analytics</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="subnav-market-data" class="sub-nav-drawer">
+            <div class="inner">
+                <ul class="sub-nav-item nav-for-analytics">
+                    <li class="">
+                        <a href="/top/">
+                            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+                            Store Stats</a>
+                    </li>
+                </ul>
+                <ul class="sub-nav-item nav-for-analytics">
+                    <li class="">
+                        <a href="/indexes/all-stores/rank/overall/">
+                            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+                            Index</a>
+                    </li>
+                </ul>
+                <ul class="sub-nav-item sub-nav-item-sep nav-for-analytics">
+                    <li class="">
+                        <a href="/ssp_dashboard/">
+                            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+                            Store Stats Pro
+                        </a>
+                        <span class="sub-nav-item-label">$59起</span>
+                    </li>
+                </ul>
+                
+                <ul class="sub-nav-item sub-nav-item-sep nav-for-market-data">
+                    <li class="">
+                        <a href="/intelligence/apps/comparator/">
+                            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+                            Intelligence
+                        </a>
+                        <span class="sub-nav-item-label">PREMIUM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="subnav-tours" class="sub-nav-drawer">
+            <div class="inner">
+                
+<ul class="sub-nav-item nav-for-analytics">
+    <li class=" as-header">
+        <a href="/tours/market-data/">
+            
+             市场数据 
+        </a>
+    </li><li class="">
+        <a href="/tours/store-stats/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            Store Stats
+        </a>
+    </li><li class="">
+        <a href="/tours/store-stats-pro/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            Store Stats Pro
+            <i class="nav-special-dot">$59起</i>
+        </a>
+    </li><li class="">
+        <a href="/tours/aso/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            ASO
+        </a>
+    </li>
+</ul>
+
+<ul class="sub-nav-item nav-for-market-data">
+    <li class=" as-header">
+        <a href="/tours/enterprise-market-data/">
+            
+            企业级市场数据
+            <i class="nav-special-dot">PREMIUM</i>
+        </a>
+    </li><li class="">
+        <a href="/tours/store-intelligence/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            Store Intelligence
+        </a>
+    </li><li class="">
+        <a href="/tours/usage-intelligence/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            Usage Intelligence
+        </a>
+    </li><li class="">
+        <a href="/tours/audience-intelligence/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            Audience Intelligence
+        </a>
+    </li>
+</ul>
+
+<ul class="sub-nav-item nav-for-analytics">
+    <li class=" as-header">
+        <a href="/tours/app-analytics-platform/">
+            
+            应用分析平台
+        </a>
+    </li><li class="">
+        <a href="/tours/app-store-analytics/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            App Store Analytics
+        </a>
+    </li><li class="">
+        <a href="/tours/advertising-analytics/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            Advertising Analytics
+        </a>
+    </li><li class="">
+        <a href="/tours/in-app-analytics/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            In-App Analytics
+            <i class="nav-special-dot">BETA</i>
+        </a>
+    </li>
+</ul>
+
+
+            </div>
+        </div>
+        <div id="subnav-about" class="sub-nav-drawer">
+            <div class="inner">
+                
+<ul class="sub-nav-item">
+    <li class="">
+        <a href="/about/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            关于
+        </a>
+    </li>
+</ul>
+
+<ul class="sub-nav-item">
+    <li class="">
+        <a href="/about/leadership/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            核心团队
+        </a>
+    </li>
+</ul>
+
+<ul class="sub-nav-item">
+    <li class="">
+        <a href="/about/jobs/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            招聘
+        </a>
+    </li>
+</ul>
+
+<ul class="sub-nav-item">
+    <li class="">
+        <a href="/about/customers/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            客户
+        </a>
+    </li>
+</ul>
+
+<ul class="sub-nav-item">
+    <li class="">
+        <a href="/about/partnerships/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            合作关系
+        </a>
+    </li>
+</ul>
+
+<ul class="sub-nav-item">
+    <li class="">
+        <a href="/about/press/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            报道
+        </a>
+    </li>
+</ul>
+
+<ul class="sub-nav-item">
+    <li class="">
+        <a href="/about/contact/">
+            <span class="sub-nav-list-item-marker"> <i class="icon-aa-bullet-filled"></i> <i class="icon-aa-bullet"></i> </span>
+            联系我们
+        </a>
+    </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div></div>
+</div>
+
+<script>
+
+(function(){var mainNav=document.getElementById("J-main-nav");if(mainNav){proc(mainNav)}mainNav=document.getElementById("J-main-nav-r");if(mainNav){proc(mainNav)}function proc(mainNav){var navItems=mainNav.getElementsByTagName("li");var currentNavItem;var hasClass=function(element,className){var classNames=element.className.split(/\s+/);for(var i=0;i<classNames.length;i++){if(className===classNames[i]){return true}}return false};for(var i=0,len=navItems.length;i<len;i++){var nav=navItems[i];if(hasClass(nav,"current")){currentNavItem=nav}}if(!currentNavItem){return}var currentNavLink=currentNavItem.getElementsByTagName("a")[0];if(!hasClass(currentNavLink,"aa-nav-toggle")){return}currentNavItem.className+=" active";var targetSubNavId=currentNavLink.href.split("#")[1];var targetSubNav=document.getElementById(targetSubNavId);if(!targetSubNav){return}var inner=targetSubNav.getElementsByTagName("div")[0];var wrapper=targetSubNav.parentElement.parentElement;targetSubNav.className+=" aa-nav-in";targetSubNav.style.display="block";inner.style.top="0";inner.style.display="block";wrapper.style.minHeight=inner.offsetHeight+"px"}})();
+
+</script>
+
+
+
+  
+
+    <div class="main storestats_wrapper page_app-reviews">
+    
+    <div class="inner" 
+itemscope itemtype="http://schema.org/MobileSoftwareApplication"
+>
+      <!-- AddThis Button BEGIN -->
+      <div class="aa-widget-addthis">
+        <div class="addthis_toolbox addthis_default_style addthis_16x16_style">
+          <a class="addthis_button_preferred_1"></a>
+          <a class="addthis_button_preferred_2"></a>
+          <a class="addthis_button_preferred_3"></a>
+          <a class="addthis_button_preferred_4"></a>
+          <a class="addthis_button_compact"></a>
+        </div>
+      </div>
+      <!-- AddThis Button END -->
+      
+
+<script>
+    var pageVal = pageVal || {};
+    pageVal.app_show_mode = 'public'; 
+    pageVal.app_market = 'itc';
+    pageVal.market_langid = '';
+    pageVal.app_device = ''; 
+</script>
+
+<!-- app picker -->
+<!--  -->
+<!-- app picker end -->
+<div class="frame frame-app">
+    <div class="aa-sidebar aa-sidebar-large">
+        <div class="sidebar-inner">
+            
+            <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <span itemprop="price" content=""></span>
+                <span itemprop="seller" itemscope itemtype="http://schema.org/Organization">
+                  <span itemprop="name" content="iOS Store"></span>
+                </span>
+            </span>
+            <span itemscope itemtype="http://schema.org/AggregateRating" itemprop="aggregateRating">
+                <span itemprop="ratingValue" content=""></span>
+                <span itemprop="ratingCount" content=""></span>
+            </span>
+            
+            <div class="app_name entity-profile">
+                <div class="entity-icon">
+                    <img itemprop="image" class="itc" src="https://static-s.aa-cdn.net/img/ios/689220497/44d31d15928b16a109691fcf34b15fc7"  alt="Hi Words - A New Word Search Puzzle Game - iOS StoreApp排名及App Store Stats" />
+                </div>
+                <div class="entity-name" itemprop="name">Hi Words - A New Word Search Puzzle Game</div>
+            </div>
+            
+<ul class="menu" data-category="analytics">
+    
+    <li class="">
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/"  target="">
+            
+            
+            <i class="icon-info-sign fa fa-info-circle"></i><span>App详细信息</span>
+            
+            
+            
+        </a>
+    </li>
+    
+</ul>
+
+<ul class="menu" data-category="intelligence">
+    
+    <li class="">
+        
+            <i class="ui-icon prem-small"></i>
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/intelligence/"  target="">
+            
+            
+            <i class="aaicon-store"></i><span>Store<br>Intelligence</span>
+            
+            
+            
+        </a>
+    </li>
+    
+    <li class="">
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/usage/"  target="">
+            
+            
+            <i class="aaicon-usage"></i><span>Usage<br>Intelligence</span>
+            
+            
+            
+        </a>
+    </li>
+    
+    <li class="">
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/audience/"  target="">
+            
+            
+            <i class="icon-male fa fa-male"></i><span>Audience<br>Intelligence</span>
+            
+            
+            
+        </a>
+    </li>
+    
+</ul>
+
+<ul class="menu" data-category="rank">
+    
+    <li class="">
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/ssp/"  target="">
+            
+            
+            <i class="aaicon-sspro_icon"></i><span>Store Stats Pro</span>
+            
+            
+            
+        </a>
+    </li>
+    
+    <li class="">
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/app-ranking/"  target="">
+            
+            
+            <i class="icon-calendar fa fa-calendar"></i><span>每日排名</span>
+            
+            
+            
+        </a>
+    </li>
+    
+    <li class="">
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/rank-history/"  target="">
+            
+            
+            <i class="icon-arrow-up fa fa-arrow-up"></i><span>历史排名</span>
+            
+            
+            
+        </a>
+    </li>
+    
+    <li class="">
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/keywords/"  target="">
+            
+            
+            <i class="aaicon-keywords"></i><span>关键词 / ASO</span>
+            
+            
+            
+        </a>
+    </li>
+    
+    <li class="">
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/features/"  target="">
+            
+            
+            <i class="aaicon-featured"></i><span>推荐</span>
+            
+            
+            
+        </a>
+    </li>
+    
+    <li class="">
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/ratings/"  target="">
+            
+            
+            <i class="icon-star-half"></i><i class="icon-star-empty"></i><i class="fa fa-star-half-o"></i><span>评级</span>
+            
+            
+            
+        </a>
+    </li>
+    
+    <li class="current">
+        
+        <a  href="/apps/ios/app/hi-words-a-new-word-search-puzzle-game/reviews/"  target="">
+            
+            
+            <i class="icon-comments fa fa-comments"></i><span>评价</span>
+            
+            
+            
+        </a>
+    </li>
+    
+</ul>
+
+
+
+            <img class="sidebar-logo" src="https://static-s.aa-cdn.net/media/pictures/logo/sidebar_stencil.v-6b37ae6b.png" alt="AppAnnie.com" width="141" height="97"/>
+        </div>
+    </div>
+
+    <div class="content content-app app-reviews">
+        <div class=" content-container aa-popup-container">
+            
+
+            
+
+<div class="app-info-top aa-info-columns aa-info-columns-app">
+    
+    <div class="name">
+        <h2 class="asset-name" js-expandable >Hi Words - A New Word Search Puzzle Game</h2><label class="asset-type">[App]</label>
+        
+<div class="aa-sharing-link">
+
+
+
+</div>
+
+    </div>
+    <div class="row-control-group clearfix summary-container">
+    <div class="left-align-controls invisible summary">
+    
+        
+
+<div class="summary-item">
+    <label  >商店</label>
+    <div class="value">
+
+    
+
+
+    
+    
+        <a class="summary-item-text" title="iOS Store" href="https://itunes.apple.com/app/id689220497" target="_blank">iOS Store</a>
+        <i class="fa fa-external-link"></i>
+        
+    
+    
+
+
+    
+
+
+    
+
+    </div>
+</div>
+
+    
+        
+
+<div class="summary-item">
+    <label  >价格</label>
+    <div class="value">
+
+    
+    免费
+    
+
+
+    
+
+
+    
+
+
+    
+
+    </div>
+</div>
+
+    
+        
+
+<div class="summary-item">
+    <label  >兼容性</label>
+    <div class="value">
+
+    
+    通用
+    
+
+
+    
+
+
+    
+
+
+    
+
+    </div>
+</div>
+
+    
+        
+
+<div class="summary-item">
+    <label  >发行商</label>
+    <div class="value">
+
+    
+
+
+    
+    
+        <a class="summary-item-text" title="Man Zhang" href="/apps/ios/publisher/man-zhang/" >Man Zhang</a>
+        
+        
+    
+    
+
+
+    
+
+
+    
+
+    </div>
+</div>
+
+    
+        
+
+<div class="summary-item">
+    <label data-helptip="此App在各个App商店中所有版本的统一集合。此数据归App Annie所有并维护。"  >App集合</label>
+    <div class="value">
+
+    
+
+
+    
+
+
+    
+
+
+    
+        
+        <label data-helptip="数据尚不可用">N/A</label>
+        
+    
+
+    </div>
+</div>
+
+    
+        
+
+<div class="summary-item">
+    <label data-helptip="一系列使用同一主题元素或知识产权的相关App，类似于电影系列。此数据归App Annie所有并维护。"  >App系列</label>
+    <div class="value">
+
+    
+
+
+    
+
+
+    
+
+
+    
+        
+        <label data-helptip="数据尚不可用">N/A</label>
+        
+    
+
+    </div>
+</div>
+
+    
+    </div>
+
+    <div class="right-align-controls">
+    
+    </div>
+</div>
+
+    
+    
+</div>
+
+            <div class="main-app-content">
+            
+
+            
+
+    <div id="aa-app" ng-controller="AppReviewsCtrl">
+        <div ng-include="maintpl">
+            <div class="aa-loading"><i class="fa fa-spinner fa-spin"></i> 数据加载中…</div>
+
+        </div>
+    </div>
+
+
+            </div>
+
+            
+<div>
+    
+    
+
+    
+
+</div>
+
+            
+        </div>
+    </div>
+    <div class="left-sidebar-bg"></div>
+</div>
+
+    </div><!-- .inner -->
+    
+
+    
+
+</div><!-- .main -->
+
+    
+<div class="footer-v2-old"><div class="inner">
+    <div class="ft-navs">
+        
+<ul class="ft-links">
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tours/market-data/"> 市场数据 </a></li>
+    
+        <li><a href="/tours/enterprise-market-data/">企业级市场数据</a></li>
+    
+        <li><a href="/tours/app-analytics-platform/">应用分析平台</a></li>
+    
+        <li><a href="/pricing/">定价</a></li>
+    
+        <li><a href="/about/">关于</a></li>
+    
+        <li><a href="/about/leadership/">核心团队</a></li>
+    
+        <li><a href="/about/jobs/">招聘</a></li>
+    
+        <li><a href="/about/partnerships/">合作关系</a></li>
+    
+        <li><a href="/about/press/">报道</a></li>
+    
+        <li><a href="/about/contact/">联系我们</a></li>
+    
+        <li><a href="http://blog.appannie.com" target="_blank">博客</a></li>
+    
+</ul><ul class="ft-links">
+    
+        <li><a href="http://support.appannie.com" target="_blank">支持</a></li>
+    
+        <li><a href="/legal/security/">安全</a></li>
+    
+        <li><a href="/legal/data-usage-policy/">数据使用政策</a></li>
+    
+        <li><a href="/legal/copyright/">版权声明</a></li>
+    
+</ul>
+
+
+        <ul class="ft-links ft-lang-switch">
+        
+            <li data-lang="en">
+                <a>English</a>
+            </li>
+        
+            <li data-lang="jp">
+                <a>日本語</a>
+            </li>
+        
+            <li data-lang="kr">
+                <a>한국어</a>
+            </li>
+        
+            <li data-lang="cn" class="current">
+                <a>中文(简体)</a>
+            </li>
+        
+            <li data-lang="ru">
+                <a>Русский</a>
+            </li>
+        
+            <li data-lang="fr">
+                <a>Français</a>
+            </li>
+        
+            <li data-lang="de">
+                <a>Deutsch</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="ft-misc clearfix">
+        <div class="pull-left">
+            <ul class="ft-links">
+                <li>© 2015 App Annie</li>
+                <li><a href="/help/terms/">使用条款</a></li>
+                <li><a href="/help/privacy/">隐私政策</a></li>
+                <li id="edd8bedb-dfb9-45e4-9bc6-a547890d2b4d">
+                    <a href="//privacy.truste.com/privacy-seal/App-Annie/validation?rid=d5ca94fe-face-4cbc-97c9-5cad37668d4d"
+                       title="TRUSTe European Safe Harbor certification" target="_blank">
+                        <img style="border: none; vertical-align: middle;" src="//privacy-policy.truste.com/privacy-seal/App-Annie/seal?rid=d5ca94fe-face-4cbc-97c9-5cad37668d4d" alt="TRUSTe European Safe Harbor certification" height="26" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="pull-right">
+            <div class="ft-socials">
+                <a href="http://www.linkedin.com/company/app-annie" target="_blank"><i class="sprite-aa-linkedin"></i></a>
+                <a href="http://www.facebook.com/AppAnnie" target="_blank"><i class="sprite-aa-facebook"></i></a>
+                <a href="http://www.twitter.com/appannie/" target="_blank"><i class="sprite-aa-twitter"></i></a>
+                <a href="http://google.com/+appannie" target="_blank"><i class="sprite-aa-gplus"></i></a>
+                <a href="http://www.slideshare.net/AppAnnie" target="_blank"><i class="sprite-aa-slideshare"></i></a>
+                <a href="http://www.youtube.com/appannietv" target="_blank"><i class="sprite-aa-youtube"></i></a>
+                <a href="http://e.weibo.com/appannie" target="_blank"><i class="sprite-aa-weibo"></i></a>
+                <a href="http://blog.appannie.com/feed/" target="_blank"><i class="sprite-aa-rss"></i></a>
+            </div>
+        </div>
+    </div>
+</div></div>
+
+
+
+<div id="overlay"></div>
+
+<script>
+    var pageVal = pageVal || {};
+    pageVal.user = pageVal.user || {};
+    
+        pageVal.user.id = '272766';
+        pageVal.user.eid = '33a823bdf5fc8a7fd7378a9a799b9029';
+        pageVal.user.flags = {"has_accounts": false};
+    
+</script>
+
+
+
+<script>
+aaTrack=function(){var e={},f=[],k=0,h=function(){if(arguments[0]){var a=arguments[0],g=[].slice.call(arguments,1);500>k?(f.push([a,g]),k++):(f.shift(),f.push([a,g]));if(e[a])for(var a=e[a],b=a.length,c=0;c<b;c++)a[c].apply(null,g)}};h.register=function(a,g){a:if("object"==typeof a)for(var b in a){var c=a[b];if(e[b])for(var d=e[b],k=d.length,l=0;l<k;l++){if(d[l]==c)break a}else e[b]=[];e[b].push(c)}if(g)for(var h in a)for(b=a[h],c=f.length,d=0;d<c;d++)f[d][0]==h&&b.apply(null,f[d][1])};return h}();
+</script>
+<script type="text/javascript" data-tk="pre_install" >
+  var _kmq = _kmq || [];
+  var _mkto = _mkto || [];
+
+  aaTrack('set', {
+      'env': 'production',
+      'pageType': 'product'
+  });
+
+  (function() {
+    var _tracker = [];
+    tracker = function(item) { _tracker.push(item); }; tracker.pool = _tracker;
+  })();
+</script>
+
+
+    <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-D44H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>
+!function(w,d,l,i){function go(){!function(w,d,s,l,i){w[l]=w[l]||[],w[l].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl="dataLayer"!=l?"&l="+l:"";j.async=!0,j.src="//www.googletagmanager.com/gtm.js?id="+i+dl,f.parentNode.insertBefore(j,f)}(window,document,"script",l,i)}l="dataLayer_"+i.replace("GTM-",""),lo=w[l]||(w[l]=[]),aaTrack.register({set:function(obj){lo.push(obj)}},!0),w.addEventListener?w.addEventListener("load",go,!1):w.attachEvent?w.attachEvent("onload",go):setTimeout(go,100)}(window,document,"","GTM-D44H");
+</script>
+
+    
+    
+
+<script type="text/javascript" data-tk="track_on_every_page" data-tk-com="gp">
+    aaTrack('set', {
+        'Interface Language': 'cn',
+        'Page Type': 'Web Prod'
+    });
+
+    
+        aaTrack('set', {
+            'eid': '33a823bdf5fc8a7fd7378a9a799b9029',
+            'uid': '272766'
+        });
+    
+
+    
+        try {
+            tracker(['identify', 272766, {
+                email: 'jennifer_hao@tianqiinfo.com',
+                $mktoHash: 'ec863841940c6b52817dfeff61a010327698543a'
+            }]);
+        } catch (ex) {
+        }
+        
+    
+    // set all logs to ga
+    
+    try {
+        tracker(['page']);
+    } catch (ex) {
+    }
+
+    
+</script>
+
+
+</div>
+
+<script>
+/* quick $ step 2/3 */
+window.$ = window.jQuery = undefined;
+</script>
+<script src="https://static-s.aa-cdn.net/media/javascript/_lang/zh-cn/django/all.v-0041a5-3f8190.js"></script>
+
+
+    
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="https://static-s.aa-cdn.net/media/javascript/lib/browser-support/excanvas.canvas.text.js"></script>
+        <![endif]-->
+        <script src="https://static-s.aa-cdn.net/media/javascript/c/prod.min.v-8920fd38.js"></script>
+<script src="https://static-s.aa-cdn.net/media/lib/ng-v1.2.1/i18n/angular-locale_zh-cn.v-787d1fd2.js"></script>
+        
+    
+
+
+
+<script>
+/* quick $ step 3/3 */
+(function(fns, $) {
+  if (!fns || fns.length < 1) { return; }
+  var i = 0, l = fns.length;
+  for (; i < l; ++i) {
+    $(fns[i]);
+  }
+  fns.length = 0;
+})(__aa_fns, jQuery);
+
+
+</script>
+
+<script>/* JIRA:XP-793 */
+(function(a,e,n,r){try{if(!a||!e)return;n=e.host;if(n.match(/localhost|\.appannie\.(dev|com)/))return;r=n.replace(/www\./,"blog.");if(n===r)return;a('a[href*="blog.appannie.com"]').each(function(e,n){var o=a(n).attr("href").replace(/blog\.appannie\.com($|[?\/])/,r+"$1");a(n).attr("href",o)})}catch(o){}})(window.jQuery,window.location);
+</script>
+
+
+    
+    <script>
+        var pageVal = $.extend(pageVal || {}, {
+        vertical: 'apps',
+        market: 'ios',
+        filters: ["version", "country", "rating", "date"],
+        page: 'Reviews',
+        canDownloadCSV: false,
+        
+        filterSettings: {
+            
+            'version': {"context": [["", "\u6240\u6709\u7248\u672c"], ["1.7", "1.7"], ["1.6", "1.6"], ["1.5", "1.5"], ["1.2", "1.2"], ["1.0", "1.0"], ["Unknown", "Unknown"]], "defaults": ""},
+            
+            
+            'country': {"context": {"items": [[null, "\u6240\u6709\u56fd\u5bb6/\u5730\u533a", [["", "\u6240\u6709\u56fd\u5bb6/\u5730\u533a"], ["CN", "\u4e2d\u56fd"], ["AM", "\u4e9a\u7f8e\u5c3c\u4e9a"], ["IL", "\u4ee5\u8272\u5217"], ["RU", "\u4fc4\u7f57\u65af"], ["IS", "\u51b0\u5c9b"], ["CA", "\u52a0\u62ff\u5927"], ["ZA", "\u5357\u975e"], ["IN", "\u5370\u5ea6"], ["TW", "\u53f0\u6e7e"], ["MX", "\u58a8\u897f\u54e5"], ["VE", "\u59d4\u5185\u745e\u62c9"], ["GR", "\u5e0c\u814a"], ["IT", "\u610f\u5927\u5229"], ["NO", "\u632a\u5a01"], ["SK", "\u65af\u6d1b\u4f10\u514b"], ["SG", "\u65b0\u52a0\u5761"], ["NZ", "\u65b0\u897f\u5170"], ["JP", "\u65e5\u672c"], ["BE", "\u6bd4\u5229\u65f6"], ["PL", "\u6ce2\u5170"], ["TH", "\u6cf0\u56fd"], ["AU", "\u6fb3\u5927\u5229\u4e9a"], ["IE", "\u7231\u5c14\u5170"], ["SE", "\u745e\u5178"], ["KW", "\u79d1\u5a01\u7279"], ["PE", "\u79d8\u9c81"], ["LT", "\u7acb\u9676\u5b9b"], ["RO", "\u7f57\u9a6c\u5c3c\u4e9a"], ["US", "\u7f8e\u56fd"], ["GB", "\u82f1\u56fd"], ["NL", "\u8377\u5170"], ["PH", "\u83f2\u5f8b\u5bbe"], ["ES", "\u897f\u73ed\u7259"], ["AR", "\u963f\u6839\u5ef7"], ["AE", "\u963f\u8054\u914b"], ["KR", "\u97e9\u56fd"], ["HK", "\u9999\u6e2f"], ["MY", "\u9a6c\u6765\u897f\u4e9a"]]]]}, "defaults": ""},
+            
+            
+            'rating': {"context": [["", "\u6240\u6709\u8bc4\u7ea7"], ["GOOD", "\u597d\u8bc4"], ["BAD", "\u5dee\u8bc4"], [5, "5\u661f "], [4, "4\u661f "], [3, "3\u661f "], [2, "2\u661f "], [1, "1\u661f "]], "defaults": ""},
+            'date': {"context": {"max_date": "2016-01-02", "min_date": "2013-10-25"}, "defaults": "2015-01-01~2015-12-31"},
+            'search': {
+                'value': ''
+            }
+        }
+    });
+    </script>
+    
+
+
+<script>
+    var pageVal = pageVal || {};
+    pageVal.detailPanelOpened = true;
+    pageVal.account_id = '';
+    pageVal.market_name = 'ios'
+    pageVal.app_id =  '689220497' 
+    pageVal.is_shared = true;
+    pageVal.vertical = 'apps';
+    pageVal.is_demo = false;
+
+pageVal.user_prefer_country = "US";
+pageVal.user_prefer_tzone = "PST8PDT";
+
+
+ pageVal.countries = [{"name": "\u963f\u5c14\u5df4\u5c3c\u4e9a", "code": "AL", "slug": "albania", "tzone": "Europe/Tirane", "sid": 143575}, {"name": "\u963f\u5c14\u53ca\u5229\u4e9a", "code": "DZ", "slug": "algeria", "tzone": "Africa/Algiers", "sid": 143563}, {"name": "\u5b89\u54e5\u62c9", "code": "AO", "slug": "angola", "tzone": "Africa/Luanda", "sid": 143564}, {"name": "\u5b89\u572d\u62c9", "code": "AI", "slug": "anguilla", "tzone": "America/Anguilla", "sid": 143538}, {"name": "\u5b89\u63d0\u74dc\u548c\u5df4\u5e03\u8fbe", "code": "AG", "slug": "antigua-and-barbuda", "tzone": "America/Antigua", "sid": 143540}, {"name": "\u963f\u6839\u5ef7", "code": "AR", "slug": "argentina", "tzone": "America/Argentina/Buenos_Aires", "sid": 143505}, {"name": "\u4e9a\u7f8e\u5c3c\u4e9a", "code": "AM", "slug": "armenia", "tzone": "Asia/Yerevan", "sid": 143524}, {"name": "\u6fb3\u5927\u5229\u4e9a", "code": "AU", "slug": "australia", "tzone": "Australia/Sydney", "sid": 143460}, {"name": "\u5965\u5730\u5229", "code": "AT", "slug": "austria", "tzone": "Europe/Vienna", "sid": 143445}, {"name": "\u963f\u585e\u62dc\u7586", "code": "AZ", "slug": "azerbaijan", "tzone": "Asia/Baku", "sid": 143568}, {"name": "\u5df4\u54c8\u9a6c", "code": "BS", "slug": "bahamas", "tzone": "America/Nassau", "sid": 143539}, {"name": "\u5df4\u6797", "code": "BH", "slug": "bahrain", "tzone": "Asia/Bahrain", "sid": 143559}, {"name": "\u5df4\u5df4\u591a\u65af", "code": "BB", "slug": "barbados", "tzone": "America/Barbados", "sid": 143541}, {"name": "\u767d\u4fc4\u7f57\u65af", "code": "BY", "slug": "belarus", "tzone": "Europe/Minsk", "sid": 143565}, {"name": "\u6bd4\u5229\u65f6", "code": "BE", "slug": "belgium", "tzone": "Europe/Brussels", "sid": 143446}, {"name": "\u4f2f\u5229\u5179", "code": "BZ", "slug": "belize", "tzone": "America/Belize", "sid": 143555}, {"name": "\u8d1d\u5b81", "code": "BJ", "slug": "benin", "tzone": "Africa/Porto-Novo", "sid": 143576}, {"name": "\u767e\u6155\u5927", "code": "BM", "slug": "bermuda", "tzone": "Atlantic/Bermuda", "sid": 143542}, {"name": "\u4e0d\u4e39", "code": "BT", "slug": "Bhutan", "tzone": "Asia/Thimphu", "sid": 143577}, {"name": "\u73bb\u5229\u7ef4\u4e9a", "code": "BO", "slug": "bolivia", "tzone": "America/La_Paz", "sid": 143556}, {"name": "\u535a\u8328\u74e6\u7eb3", "code": "BW", "slug": "botswana", "tzone": "Africa/Gaborone", "sid": 143525}, {"name": "\u5df4\u897f", "code": "BR", "slug": "brazil", "tzone": "America/Sao_Paulo", "sid": 143503}, {"name": "\u82f1\u5c5e\u7ef4\u5c14\u4eac\u7fa4\u5c9b", "code": "VG", "slug": "british-virgin-islands", "tzone": "America/Tortola", "sid": 143543}, {"name": "\u6587\u83b1", "code": "BN", "slug": "brunei", "tzone": "Asia/Brunei", "sid": 143560}, {"name": "\u4fdd\u52a0\u5229\u4e9a", "code": "BG", "slug": "bulgaria", "tzone": "Europe/Sofia", "sid": 143526}, {"name": "\u5e03\u57fa\u7eb3\u6cd5\u7d22", "code": "BF", "slug": "burkina-faso", "tzone": "Africa/Ouagadougou", "sid": 143578}, {"name": "\u67ec\u57d4\u5be8", "code": "KH", "slug": "cambodia", "tzone": "Asia/Phnom_Penh", "sid": 143579}, {"name": "\u52a0\u62ff\u5927", "code": "CA", "slug": "canada", "tzone": "America/Toronto", "sid": 143455}, {"name": "\u4f5b\u5f97\u89d2", "code": "CV", "slug": "cape-verde", "tzone": "Atlantic/Cape_Verde", "sid": 143580}, {"name": "\u5f00\u66fc\u7fa4\u5c9b", "code": "KY", "slug": "cayman-islands", "tzone": "America/Cayman", "sid": 143544}, {"name": "\u4e4d\u5f97", "code": "TD", "slug": "chad", "tzone": "Africa/Ndjamena", "sid": 143581}, {"name": "\u667a\u5229", "code": "CL", "slug": "chile", "tzone": "America/Santiago", "sid": 143483}, {"name": "\u4e2d\u56fd", "code": "CN", "slug": "china", "tzone": "Asia/Shanghai", "sid": 143465}, {"name": "\u54e5\u4f26\u6bd4\u4e9a", "code": "CO", "slug": "colombia", "tzone": "America/Bogota", "sid": 143501}, {"name": "\u521a\u679c", "code": "CG", "slug": "congo", "tzone": "Africa/Brazzaville", "sid": 143582}, {"name": "\u54e5\u65af\u8fbe\u9ece\u52a0", "code": "CR", "slug": "costa-rica", "tzone": "America/Costa_Rica", "sid": 143495}, {"name": "\u514b\u7f57\u5730\u4e9a", "code": "HR", "slug": "croatia", "tzone": "Europe/Zagreb", "sid": 143494}, {"name": "\u585e\u6d66\u8def\u65af", "code": "CY", "slug": "cyprus", "tzone": "Asia/Nicosia", "sid": 143557}, {"name": "\u6377\u514b\u5171\u548c\u56fd", "code": "CZ", "slug": "czech-republic", "tzone": "Europe/Prague", "sid": 143489}, {"name": "\u4e39\u9ea6", "code": "DK", "slug": "denmark", "tzone": "Europe/Copenhagen", "sid": 143458}, {"name": "\u591a\u7c73\u5c3c\u514b", "code": "DM", "slug": "dominica", "tzone": "America/Dominica", "sid": 143545}, {"name": "\u591a\u7c73\u5c3c\u52a0\u5171\u548c\u56fd", "code": "DO", "slug": "dominican-republic", "tzone": "America/Santo_Domingo", "sid": 143508}, {"name": "\u5384\u74dc\u591a\u5c14", "code": "EC", "slug": "ecuador", "tzone": "America/Guayaquil", "sid": 143509}, {"name": "\u57c3\u53ca", "code": "EG", "slug": "egypt", "tzone": "Africa/Cairo", "sid": 143516}, {"name": "\u8428\u5c14\u74e6\u591a", "code": "SV", "slug": "el-salvador", "tzone": "America/El_Salvador", "sid": 143506}, {"name": "\u7231\u6c99\u5c3c\u4e9a", "code": "EE", "slug": "estonia", "tzone": "Europe/Tallinn", "sid": 143518}, {"name": "\u6590\u6d4e", "code": "FJ", "slug": "fiji", "tzone": "Pacific/Fiji", "sid": 143583}, {"name": "\u82ac\u5170", "code": "FI", "slug": "finland", "tzone": "Europe/Helsinki", "sid": 143447}, {"name": "\u6cd5\u56fd", "code": "FR", "slug": "france", "tzone": "Europe/Paris", "sid": 143442}, {"name": "\u5188\u6bd4\u4e9a", "code": "GM", "slug": "gambia", "tzone": "Africa/Banjul", "sid": 143584}, {"name": "\u5fb7\u56fd", "code": "DE", "slug": "germany", "tzone": "Europe/Berlin", "sid": 143443}, {"name": "\u52a0\u7eb3", "code": "GH", "slug": "ghana", "tzone": "Africa/Accra", "sid": 143573}, {"name": "\u5e0c\u814a", "code": "GR", "slug": "greece", "tzone": "Europe/Athens", "sid": 143448}, {"name": "\u683c\u6797\u7eb3\u8fbe", "code": "GD", "slug": "grenada", "tzone": "America/Grenada", "sid": 143546}, {"name": "\u5371\u5730\u9a6c\u62c9", "code": "GT", "slug": "guatemala", "tzone": "America/Guatemala", "sid": 143504}, {"name": "\u51e0\u5185\u4e9a\u6bd4\u7ecd", "code": "GW", "slug": "guinea-bissau", "tzone": "Africa/Bissau", "sid": 143585}, {"name": "\u572d\u4e9a\u90a3", "code": "GY", "slug": "guyana", "tzone": "America/Guyana", "sid": 143553}, {"name": "\u6d2a\u90fd\u62c9\u65af", "code": "HN", "slug": "honduras", "tzone": "America/Tegucigalpa", "sid": 143510}, {"name": "\u9999\u6e2f", "code": "HK", "slug": "hong-kong", "tzone": "Asia/Hong_Kong", "sid": 143463}, {"name": "\u5308\u7259\u5229", "code": "HU", "slug": "hungary", "tzone": "Europe/Budapest", "sid": 143482}, {"name": "\u51b0\u5c9b", "code": "IS", "slug": "iceland", "tzone": "Atlantic/Reykjavik", "sid": 143558}, {"name": "\u5370\u5ea6", "code": "IN", "slug": "india", "tzone": "Asia/Kolkata", "sid": 143467}, {"name": "\u5370\u5ea6\u5c3c\u897f\u4e9a", "code": "ID", "slug": "indonesia", "tzone": "Asia/Jakarta", "sid": 143476}, {"name": "\u7231\u5c14\u5170", "code": "IE", "slug": "ireland", "tzone": "Europe/Dublin", "sid": 143449}, {"name": "\u4ee5\u8272\u5217", "code": "IL", "slug": "israel", "tzone": "Asia/Jerusalem", "sid": 143491}, {"name": "\u610f\u5927\u5229", "code": "IT", "slug": "italy", "tzone": "Europe/Rome", "sid": 143450}, {"name": "\u7259\u4e70\u52a0", "code": "JM", "slug": "jamaica", "tzone": "America/Jamaica", "sid": 143511}, {"name": "\u65e5\u672c", "code": "JP", "slug": "japan", "tzone": "Asia/Tokyo", "sid": 143462}, {"name": "\u7ea6\u65e6", "code": "JO", "slug": "jordan", "tzone": "Asia/Amman", "sid": 143528}, {"name": "\u54c8\u8428\u514b\u65af\u5766", "code": "KZ", "slug": "kazakhstan", "tzone": "Asia/Almaty", "sid": 143517}, {"name": "\u80af\u5c3c\u4e9a", "code": "KE", "slug": "kenya", "tzone": "Africa/Nairobi", "sid": 143529}, {"name": "\u79d1\u5a01\u7279", "code": "KW", "slug": "kuwait", "tzone": "Asia/Kuwait", "sid": 143493}, {"name": "\u5409\u5c14\u5409\u65af\u65af\u5766", "code": "KG", "slug": "kyrgyzstan", "tzone": "Asia/Bishkek", "sid": 143586}, {"name": "\u8001\u631d", "code": "LA", "slug": "laos", "tzone": "Asia/Vientiane", "sid": 143587}, {"name": "\u62c9\u8131\u7ef4\u4e9a", "code": "LV", "slug": "latvia", "tzone": "Europe/Riga", "sid": 143519}, {"name": "\u9ece\u5df4\u5ae9", "code": "LB", "slug": "lebanon", "tzone": "Asia/Beirut", "sid": 143497}, {"name": "\u5229\u6bd4\u91cc\u4e9a", "code": "LR", "slug": "liberia", "tzone": "Africa/Monrovia", "sid": 143588}, {"name": "\u7acb\u9676\u5b9b", "code": "LT", "slug": "lithuania", "tzone": "Europe/Vilnius", "sid": 143520}, {"name": "\u5362\u68ee\u5821", "code": "LU", "slug": "luxembourg", "tzone": "Europe/Luxembourg", "sid": 143451}, {"name": "\u6fb3\u95e8", "code": "MO", "slug": "macau", "tzone": "Asia/Macau", "sid": 143515}, {"name": "\u9a6c\u5176\u987f", "code": "MK", "slug": "macedonia", "tzone": "Europe/Skopje", "sid": 143530}, {"name": "\u9a6c\u8fbe\u52a0\u65af\u52a0", "code": "MG", "slug": "madagascar", "tzone": "Indian/Antananarivo", "sid": 143531}, {"name": "\u9a6c\u62c9\u7ef4", "code": "MW", "slug": "malawi", "tzone": "Africa/Blantyre", "sid": 143589}, {"name": "\u9a6c\u6765\u897f\u4e9a", "code": "MY", "slug": "malaysia", "tzone": "Asia/Kuala_Lumpur", "sid": 143473}, {"name": "\u9a6c\u91cc", "code": "ML", "slug": "mali", "tzone": "Africa/Bamako", "sid": 143532}, {"name": "\u9a6c\u8033\u4ed6", "code": "MT", "slug": "malta", "tzone": "Europe/Malta", "sid": 143521}, {"name": "\u6bdb\u91cc\u5854\u5c3c\u4e9a", "code": "MR", "slug": "mauritania", "tzone": "Africa/Nouakchott", "sid": 143590}, {"name": "\u6bdb\u91cc\u6c42\u65af", "code": "MU", "slug": "mauritius", "tzone": "Indian/Mauritius", "sid": 143533}, {"name": "\u58a8\u897f\u54e5", "code": "MX", "slug": "mexico", "tzone": "America/Mexico_City", "sid": 143468}, {"name": "\u5bc6\u514b\u7f57\u5c3c\u897f\u4e9a", "code": "FM", "slug": "micronesia", "tzone": "Pacific/Chuuk", "sid": 143591}, {"name": "\u6469\u5c14\u591a\u74e6", "code": "MD", "slug": "moldova", "tzone": "Europe/Chisinau", "sid": 143523}, {"name": "\u8499\u53e4", "code": "MN", "slug": "mongolia", "tzone": "Asia/Ulaanbaatar", "sid": 143592}, {"name": "\u8499\u7279\u585e\u62c9\u7279", "code": "MS", "slug": "montserrat", "tzone": "America/Montserrat", "sid": 143547}, {"name": "\u83ab\u6851\u6bd4\u514b", "code": "MZ", "slug": "mozambique", "tzone": "Africa/Maputo", "sid": 143593}, {"name": "\u7eb3\u7c73\u6bd4\u4e9a", "code": "NA", "slug": "namibia", "tzone": "Africa/Windhoek", "sid": 143594}, {"name": "\u5c3c\u6cca\u5c14", "code": "NP", "slug": "nepal", "tzone": "Asia/Kathmandu", "sid": 143484}, {"name": "\u8377\u5170", "code": "NL", "slug": "netherlands", "tzone": "Europe/Amsterdam", "sid": 143452}, {"name": "\u65b0\u897f\u5170", "code": "NZ", "slug": "new-zealand", "tzone": "Pacific/Auckland", "sid": 143461}, {"name": "\u5c3c\u52a0\u62c9\u74dc", "code": "NI", "slug": "nicaragua", "tzone": "America/Managua", "sid": 143512}, {"name": "\u5c3c\u65e5\u5c14", "code": "NE", "slug": "niger", "tzone": "Africa/Niamey", "sid": 143534}, {"name": "\u5c3c\u65e5\u5229\u4e9a", "code": "NG", "slug": "nigeria", "tzone": "Africa/Lagos", "sid": 143561}, {"name": "\u632a\u5a01", "code": "NO", "slug": "norway", "tzone": "Europe/Oslo", "sid": 143457}, {"name": "\u963f\u66fc", "code": "OM", "slug": "oman", "tzone": "Asia/Muscat", "sid": 143562}, {"name": "\u5df4\u57fa\u65af\u5766", "code": "PK", "slug": "pakistan", "tzone": "Asia/Karachi", "sid": 143477}, {"name": "\u5e15\u52b3", "code": "PW", "slug": "palau", "tzone": "Pacific/Palau", "sid": 143595}, {"name": "\u5df4\u62ff\u9a6c", "code": "PA", "slug": "panama", "tzone": "America/Panama", "sid": 143485}, {"name": "\u5df4\u5e03\u4e9a\u65b0\u51e0\u5185\u4e9a", "code": "PG", "slug": "papua-new-guinea", "tzone": "Pacific/Port_Moresby", "sid": 143597}, {"name": "\u5df4\u62c9\u572d", "code": "PY", "slug": "paraguay", "tzone": "America/Asuncion", "sid": 143513}, {"name": "\u79d8\u9c81", "code": "PE", "slug": "peru", "tzone": "America/Lima", "sid": 143507}, {"name": "\u83f2\u5f8b\u5bbe", "code": "PH", "slug": "philipines", "tzone": "Asia/Manila", "sid": 143474}, {"name": "\u6ce2\u5170", "code": "PL", "slug": "poland", "tzone": "Europe/Warsaw", "sid": 143478}, {"name": "\u8461\u8404\u7259", "code": "PT", "slug": "portugal", "tzone": "Europe/Lisbon", "sid": 143453}, {"name": "\u5361\u5854\u5c14", "code": "QA", "slug": "qatar", "tzone": "Asia/Qatar", "sid": 143498}, {"name": "\u7f57\u9a6c\u5c3c\u4e9a", "code": "RO", "slug": "romania", "tzone": "Europe/Bucharest", "sid": 143487}, {"name": "\u4fc4\u7f57\u65af", "code": "RU", "slug": "russia", "tzone": "Europe/Moscow", "sid": 143469}, {"name": "\u5723\u591a\u7f8e\u548c\u666e\u6797\u897f\u6bd4", "code": "ST", "slug": "sao-tome-and-principe", "tzone": "Africa/Sao_Tome", "sid": 143598}, {"name": "\u6c99\u7279\u963f\u62c9\u4f2f", "code": "SA", "slug": "saudi-arabia", "tzone": "Asia/Riyadh", "sid": 143479}, {"name": "\u585e\u5185\u52a0\u5c14", "code": "SN", "slug": "senegal", "tzone": "Africa/Dakar", "sid": 143535}, {"name": "\u585e\u820c\u5c14", "code": "SC", "slug": "seychelles", "tzone": "Indian/Mahe", "sid": 143599}, {"name": "\u585e\u62c9\u5229\u6602", "code": "SL", "slug": "sierra-leone", "tzone": "Africa/Freetown", "sid": 143600}, {"name": "\u65b0\u52a0\u5761", "code": "SG", "slug": "singapore", "tzone": "Asia/Singapore", "sid": 143464}, {"name": "\u65af\u6d1b\u4f10\u514b", "code": "SK", "slug": "slovakia", "tzone": "Europe/Bratislava", "sid": 143496}, {"name": "\u65af\u6d1b\u6587\u5c3c\u4e9a", "code": "SI", "slug": "slovenia", "tzone": "Europe/Ljubljana", "sid": 143499}, {"name": "\u6240\u7f57\u95e8\u7fa4\u5c9b", "code": "SB", "slug": "solomon-islands", "tzone": "Pacific/Guadalcanal", "sid": 143601}, {"name": "\u5357\u975e", "code": "ZA", "slug": "south-africa", "tzone": "Africa/Johannesburg", "sid": 143472}, {"name": "\u97e9\u56fd", "code": "KR", "slug": "south-korea", "tzone": "Asia/Seoul", "sid": 143466}, {"name": "\u897f\u73ed\u7259", "code": "ES", "slug": "spain", "tzone": "Europe/Madrid", "sid": 143454}, {"name": "\u65af\u91cc\u5170\u5361", "code": "LK", "slug": "sri-lanka", "tzone": "Asia/Colombo", "sid": 143486}, {"name": "\u5723\u57fa\u8328\u548c\u5c3c\u7ef4\u65af", "code": "KN", "slug": "st-kitts-and-nevis", "tzone": "America/St_Kitts", "sid": 143548}, {"name": "\u5723\u5362\u897f\u4e9a", "code": "LC", "slug": "st-lucia", "tzone": "America/St_Lucia", "sid": 143549}, {"name": "\u5723\u6587\u68ee\u7279\u548c\u683c\u6797\u7eb3\u4e01\u65af", "code": "VC", "slug": "st-vincent-and-the-grenadines", "tzone": "America/St_Vincent", "sid": 143550}, {"name": "\u82cf\u91cc\u5357", "code": "SR", "slug": "suriname", "tzone": "America/Paramaribo", "sid": 143554}, {"name": "\u65af\u5a01\u58eb\u5170", "code": "SZ", "slug": "swaziland", "tzone": "Africa/Mbabane", "sid": 143602}, {"name": "\u745e\u5178", "code": "SE", "slug": "sweden", "tzone": "Europe/Stockholm", "sid": 143456}, {"name": "\u745e\u58eb", "code": "CH", "slug": "switzerland", "tzone": "Europe/Zurich", "sid": 143459}, {"name": "\u53f0\u6e7e", "code": "TW", "slug": "taiwan", "tzone": "Asia/Taipei", "sid": 143470}, {"name": "\u5854\u5409\u514b\u65af\u5766", "code": "TJ", "slug": "tajikistan", "tzone": "Asia/Dushanbe", "sid": 143603}, {"name": "\u5766\u6851\u5c3c\u4e9a", "code": "TZ", "slug": "tanzania", "tzone": "Africa/Dar_es_Salaam", "sid": 143572}, {"name": "\u6cf0\u56fd", "code": "TH", "slug": "thailand", "tzone": "Asia/Bangkok", "sid": 143475}, {"name": "\u7279\u7acb\u5c3c\u8fbe\u548c\u591a\u5df4\u54e5", "code": "TT", "slug": "trinidad-and-tobago", "tzone": "America/Port_of_Spain", "sid": 143551}, {"name": "\u7a81\u5c3c\u65af", "code": "TN", "slug": "tunisia", "tzone": "Africa/Tunis", "sid": 143536}, {"name": "\u571f\u8033\u5176", "code": "TR", "slug": "turkey", "tzone": "Europe/Istanbul", "sid": 143480}, {"name": "\u571f\u5e93\u66fc\u65af\u5766", "code": "TM", "slug": "turkmenistan", "tzone": "Asia/Ashgabat", "sid": 143604}, {"name": "\u7279\u514b\u65af\u548c\u51ef\u79d1\u65af\u7fa4\u5c9b", "code": "TC", "slug": "turks-and-caicos", "tzone": "America/Grand_Turk", "sid": 143552}, {"name": "\u4e4c\u5e72\u8fbe", "code": "UG", "slug": "uganda", "tzone": "Africa/Kampala", "sid": 143537}, {"name": "\u4e4c\u514b\u5170", "code": "UA", "slug": "ukraine", "tzone": "Europe/Kiev", "sid": 143492}, {"name": "\u963f\u8054\u914b", "code": "AE", "slug": "united-arab-emirates", "tzone": "Asia/Dubai", "sid": 143481}, {"name": "\u82f1\u56fd", "code": "GB", "slug": "united-kingdom", "tzone": "Europe/London", "sid": 143444}, {"name": "\u7f8e\u56fd", "code": "US", "slug": "united-states", "tzone": "America/Los_Angeles", "sid": 143441}, {"name": "\u4e4c\u62c9\u572d", "code": "UY", "slug": "uruguay", "tzone": "America/Montevideo", "sid": 143514}, {"name": "\u4e4c\u5179\u522b\u514b\u65af\u5766", "code": "UZ", "slug": "uzbekistan", "tzone": "Asia/Tashkent", "sid": 143566}, {"name": "\u59d4\u5185\u745e\u62c9", "code": "VE", "slug": "venezuela", "tzone": "America/Caracas", "sid": 143502}, {"name": "\u8d8a\u5357", "code": "VN", "slug": "vietnam", "tzone": "Asia/Ho_Chi_Minh", "sid": 143471}, {"name": "\u4e5f\u95e8", "code": "YE", "slug": "yemen", "tzone": "Asia/Aden", "sid": 143571}, {"name": "\u6d25\u5df4\u5e03\u97e6", "code": "ZW", "slug": "zimbabwe", "tzone": "Africa/Harare", "sid": 143605}];
+
+
+
+    __ng_boot_inject_module = 'item.all';
+</script>
+<script src="https://static-s.aa-cdn.net/media/javascript/_lang/zh-cn/sea/aa.v-62691d-3f8190.js"></script>
+<script src="https://static-s.aa-cdn.net/media/javascript/_lang/zh-cn/sea/app.v-18d8d5-3f8190.js"></script>
+<script src="https://static-s.aa-cdn.net/media/javascript/prod/aa.min.v-205e2598.js"></script>
+<script src="https://static-s.aa-cdn.net/media/javascript/prod/app.min.v-d380ade6.js"></script>
+<script> jQuery(function(){ require(["aa/aa", "app/app"], function() {  $('body').trigger('moduleloaded');  }); }); </script>
+
+<script>
+var pageVal = $.extend(pageVal || {}, {
+    'GA': {
+        'pageType': 'Asset',
+        'vertical': 'apps',
+        'pageName': 'Reviews',
+        'label': 'Asset-apps-Reviews'
+    }
+});
+</script>
+
+<script>
+    
+    $(function() { setTimeout(function() {
+    var el = document.createElement('script'); el.type = 'text/javascript'; el.async = true;
+    el.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4fe162ac05cbe453';
+    document.body.appendChild(el);
+    }, 800);
+    });
+    
+    
+var pageVal = $.extend({}, pageVal);
+
+pageVal.lang =  __lang;
+
+
+
+
+
+    
+</script>
+
+
+
+<!-- www.appannie.com, https://www.appannie.com -->
+
+
+
+</body>
+</html>
