@@ -1,8 +1,5 @@
 https://www.appannie.com/apps/ios/app/crush-letters-new-challenging/reviews/?date=2014-10-01~2014-12-31
 
-jennifer_hao@tianqiinfo.com
-tianqi123:
-
-        'username':'jennifer_hao@tianqiinfo.com',
-        'password':'tianqi123',
+        'jennifer_hao@tianqiinfo.com',
+        123
 
