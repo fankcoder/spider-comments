@@ -10,13 +10,11 @@ def loginWeb(url):
                 "Referer":referer,
                 "Host":"www.appannie.com",
                 'Connection':'keep-alive',
-                #'Content-Type':'application/x-www-form-urlencoded',
                 'Accept':'application/json, text/plain,*/*',
                 'Accept-Encoding':'gzip, deflate, sdch',
                 'Accept-Language':'zh-CN,zh;q=0.8',
                 'X-NewRelic-ID':'VwcPUFJXGwEBUlJSDgc=',
                 'X-Requested-With':'XMLHttpRequest',
-                #'X-CSRFToken':''
                 }
 
     urlogin = "https://www.appannie.com/account/login/"
@@ -26,7 +24,7 @@ def loginWeb(url):
     postdata = {
             'csrfmiddlewaretoken':csrftoken,
             'next':'/dashboard/home/',
-            'username':'f@.com',
+            'username':'@163.com',
             'password':'syqc',
             }
     
@@ -103,7 +101,7 @@ def saveToExcel(comment):
         table.write(index,7,date[num])
         table.write(index,8,country[num])
 
-    efile.save('comments.xls')
+    efile.save('world jungle20150201-20160103.xls')
 
 def savefile(content):
     f = open('index.html','wb')
@@ -113,7 +111,8 @@ def savefile(content):
 if __name__ == '__main__':
     indexUrl = "https://www.appannie.com"
     #commentUrl="https://www.appannie.com/apps/ios/app/hi-words-a-new-word-search-puzzle-game/reviews/table/?date=2015-10-12~2016-01-02&orderby=&desc=t&page=1&limit=10"
-    commentUrl="https://www.appannie.com/apps/ios/app/wordfall-most-addictive-words/reviews/table/?date=2015-01-29~2015-12-21&orderby=&desc=t&page=1&limit=200"
+    #commentUrl="https://www.appannie.com/apps/ios/app/wordfall-most-addictive-words/reviews/table/?date=2015-01-29~2015-12-21&orderby=&desc=t&page=1&limit=200"
+    commentUrl="https://www.appannie.com/apps/ios/app/word-jungle-challenging-word/reviews/table/?date=2015-02-01~2016-01-03&orderby=&desc=t&page=1&limit=200"
     content = loginWeb(commentUrl)
     commentDate = matchRe(content)
     saveToExcel(commentDate)
