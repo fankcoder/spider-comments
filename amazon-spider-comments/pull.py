@@ -3,24 +3,33 @@ import requests
 import re
 import json
 from bs4 import BeautifulSoup
+import sys
+reload(sys)  
+sys.setdefaultencoding('utf8')
 
-def downWeb(url):
-    #referer = "https://www.appannie.com/account/login/?_ref=header"
+def downWeb(url,page):
     user_agent = ("Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:42.0) Gecko/20100101 Firefox/42.0")
     headers = {"User-Agent":user_agent,
                 #"Referer":referer,
-                #"Host":"www.appannie.com",
-                #'Connection':'keep-alive',
+                "Host":"www.amazon.com",
+                'Connection':'keep-alive',
                 'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                #'Accept-Encoding':'gzip, deflate, sdch',
-                #'Accept-Language':'zh-CN,zh;q=0.8',
-                #'X-NewRelic-ID':'VwcPUFJXGwEBUlJSDgc=',
-                #'X-Requested-With':'XMLHttpRequest',
+                'Accept-Encoding':'gzip, deflate, sdch',
+                'Accept-Language':'zh-CN,zh;q=0.8',
+                'Cache-Control':'no-cache',
+                'Pragma':'no-cache',
+                'Upgrade-Insecure-Requests':'1'
                 }
-    r = requests.get(url,headers=headers)
-    return r.content
+    contentlist = []
+    for each in range(0,page):
+        realpage = each +1
+        print "dowing page",realpage,"now ..."
+        realUrl = url %(realpage, realpage)
+        r = requests.get(realUrl,headers=headers)
+        contentlist.append(r.content)
+    return contentlist
 
-def matchRe(content):
+def matchRe(contentlist):
     system = 'amazon'
     rate = []
     title = []
@@ -29,21 +38,26 @@ def matchRe(content):
     tanslate = ""
     date = []
     
-    soup = BeautifulSoup(content)
-    comments = soup.find(id="cm_cr-review_list")
-    comment = comments.find_all("div","a-section review")
-    for each in comment:
-        rate.append(each.i.span.get_text().split()[0])
-        title.append(each.find_all("a", class_="review-title")[0].get_text().encode('utf-8'))
-        author.append(each.find_all("a", class_="author")[0].get_text().encode('utf-8'))
-        text.append(each.find_all("span", class_="review-text")[0].get_text().encode('utf-8'))
-        date.append(each.find_all("span", class_="review-date")[0].get_text().encode('utf-8'))
+    for each in contentlist:
+        print "10 comments downloading..."
+        content = each
+        soup = BeautifulSoup(content)
+        try:
+            comments = soup.find(id="cm_cr-review_list")
+            comment = comments.find_all("div","a-section review")
+            for each in comment:
+                rate.append(each.i.span.get_text().split()[0].decode().encode('utf-8'))
+                title.append(each.find_all("a", class_="review-title")[0].get_text().decode('utf-8'))
+                author.append(each.find_all("a", class_="author")[0].get_text().decode('utf-8'))
+                text.append(each.find_all("span", class_="review-text")[0].get_text().decode('utf-8'))
+                date.append(each.find_all("span", class_="review-date")[0].get_text().decode().encode('utf-8'))
+        except:
+            print 'data error...'
 
-    #re_rate = re.compile('''''')
     commentDict =  dict(system=system,rate=rate,
                         title=title,author=author,text=text,
                         tanslate=tanslate,date=date)
-    print "comments download successful..."
+    print "All comments download successful..."
     return commentDict
 
 def saveToExcel(comment):
@@ -74,7 +88,7 @@ def saveToExcel(comment):
         table.write(index,6,date[num])
 
     efile.save('crush.xls')
-    print "save successful..."
+    print "Save data successful..."
 
 def savefile(content):
     f = open('comments.txt','w')
@@ -82,8 +96,9 @@ def savefile(content):
     f.close()
 
 if __name__ == '__main__':
-    indexUrl = "http://www.amazon.com/Crush-Letters-Challenging-Search-Puzzle/product-reviews/B00JPVPX2A/ref=cm_cr_pr_paging_btm_next_9?ie=UTF8&amp;amp;showViewpoints=1&amp;amp;sortBy=recent&amp;amp;pageNumber=9"
-    content = downWeb(indexUrl)
+    page = 87
+    url = "http://www.amazon.com/Crush-Letters-Challenging-Search-Puzzle/product-reviews/B00JPVPX2A/ref=cm_cr_pr_btm_link_%d?ie=UTF8&amp%%3BshowViewpoints=1&amp%%3BsortBy=recent&amp%%3BpageNumber=9&pageNumber=%d"
+    content = downWeb(url,page)
     comments = matchRe(content)
     savefile = saveToExcel(comments)
     #savefile(comments)
