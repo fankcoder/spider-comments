@@ -22,7 +22,7 @@ def downWeb(url,page):
                 'Upgrade-Insecure-Requests':'1'
                 }
     contentlist = []
-    for each in range(231,page):
+    for each in range(0,page):
         realpage = each +1
         realUrl = url %(realpage, realpage)
         try:
@@ -128,7 +128,7 @@ def saveToExcel(comment):
         except:
             print "len error or ascii error"
 
-    efile.save('wordFall.xls')
+    efile.save('WordGenius.xls')
     print "Save data successful..."
 
 def savefile(content):
@@ -137,11 +137,13 @@ def savefile(content):
     f.close()
 
 if __name__ == '__main__':
-    page = 232
+    page = 15
     Crushurl = "http://www.amazon.com/Crush-Letters-Challenging-Search-Puzzle/product-reviews/B00JPVPX2A/ref=cm_cr_pr_btm_link_%d?ie=UTF8&amp%%3BshowViewpoints=1&amp%%3BsortBy=recent&amp%%3BpageNumber=9&pageNumber=%d"
     WordFallurl = "http://www.amazon.com/WordFall-Addictive-Words-Search-Puzzle/product-reviews/B016EX8NK0/ref=cm_cr_pr_btm_link_%d?ie=UTF8&showViewpoints=1&sortBy=recent&pageNumber=%d"
     WordJungle ="http://www.amazon.com/Word-Jungle-Challenging-Brain-Puzzle/product-reviews/B015II9BBC/ref=cm_cr_pr_btm_link_%d?ie=UTF8&showViewpoints=1&sortBy=recent&pageNumber=%d"
-    content = downWeb(WordFallurl,page)
+    HiWords ="http://www.amazon.com/Hi-Words-Word-Search-Puzzle/product-reviews/B00GY0PQZ4/ref=cm_cr_pr_btm_link_%d?ie=UTF8&amp%%3BshowViewpoints=1&amp%%3BsortBy=recent&pageNumber=%d"
+    WordGenius ="http://www.amazon.com/Word-Genius-Challenging-Exercise-Puzzle/product-reviews/B01A0MWG40/ref=cm_cr_pr_btm_link_%d?ie=UTF8&showViewpoints=1&sortBy=recent&pageNumber=%d"
+    content = downWeb(WordGenius,page)
     comments = matchRe(content)
     savefile = saveToExcel(comments)
     #savefile(comments)
