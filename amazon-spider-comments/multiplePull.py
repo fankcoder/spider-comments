@@ -7,9 +7,10 @@ import time
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
+from multiprocessing import Process
 
 
-def downWeb(url,page):
+def downWeb(url):
     user_agent = ("Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:42.0) Gecko/20100101 Firefox/42.0")
     headers = {"User-Agent":user_agent,
                 #"Referer":referer,
@@ -23,39 +24,39 @@ def downWeb(url,page):
                 'Upgrade-Insecure-Requests':'1'
                 }
     contentlist = []
-    for each in range(0,page):
-        realpage = each +1
-        realUrl = url %(realpage, realpage)
-        try:
-            time.sleep(2)
+
+    try:
+        time.sleep(2)
+        realUrl = url
+        realpage = realUrl[-2:]
+        r = requests.get(realUrl, headers=headers)
+        soup = BeautifulSoup(r.content)
+        comments = soup.find(id="cm_cr-review_list")
+        if type(comments) == type(None):
+            print "try page",realpage,"again..."
+            time.sleep(3)
             r = requests.get(realUrl, headers=headers)
             soup = BeautifulSoup(r.content)
             comments = soup.find(id="cm_cr-review_list")
             if type(comments) == type(None):
                 print "try page",realpage,"again..."
-                time.sleep(3)
+                time.sleep(5)
                 r = requests.get(realUrl, headers=headers)
                 soup = BeautifulSoup(r.content)
                 comments = soup.find(id="cm_cr-review_list")
                 if type(comments) == type(None):
-                    print "try page",realpage,"again..."
-                    time.sleep(5)
-                    r = requests.get(realUrl, headers=headers)
-                    soup = BeautifulSoup(r.content)
-                    comments = soup.find(id="cm_cr-review_list")
-                    if type(comments) == type(None):
-                        print "page ",realpage,"give up !!!!"
-                    else:
-                        print "page",realpage,"downloding successful..."
-                        contentlist.append(r.content)
+                    print "page ",realpage,"give up !!!!"
                 else:
                     print "page",realpage,"downloding successful..."
                     contentlist.append(r.content)
             else:
                 print "page",realpage,"downloding successful..."
                 contentlist.append(r.content)
-        except requests.exceptions.RequestException as e:
-            print e
+        else:
+            print "page",realpage,"downloding successful..."
+            contentlist.append(r.content)
+    except requests.exceptions.RequestException as e:
+        print e
     return contentlist
 
 def matchRe(contentlist):
@@ -137,6 +138,18 @@ def savefile(content):
     f.write(content)
     f.close()
 
+def runMultiple(page):
+    WordGenius ="http://www.amazon.com/Word-Genius-Challenging-Exercise-Puzzle/product-reviews/B01A0MWG40/ref=cm_cr_pr_btm_link_%d?ie=UTF8&showViewpoints=1&sortBy=recent&pageNumber=%d"
+    content = downWeb(WordGenius,page)
+    comments = matchRe(content)
+    savefile = saveToExcel(comments)
+
+def runMultiple(url):
+    content = downWeb(url)
+    comments = matchRe(content)
+    savefile = saveToExcel(comments)
+
+
 if __name__ == '__main__':
     page = 15
     Crushurl = "http://www.amazon.com/Crush-Letters-Challenging-Search-Puzzle/product-reviews/B00JPVPX2A/ref=cm_cr_pr_btm_link_%d?ie=UTF8&amp%%3BshowViewpoints=1&amp%%3BsortBy=recent&amp%%3BpageNumber=9&pageNumber=%d"
@@ -144,7 +157,11 @@ if __name__ == '__main__':
     WordJungle ="http://www.amazon.com/Word-Jungle-Challenging-Brain-Puzzle/product-reviews/B015II9BBC/ref=cm_cr_pr_btm_link_%d?ie=UTF8&showViewpoints=1&sortBy=recent&pageNumber=%d"
     HiWords ="http://www.amazon.com/Hi-Words-Word-Search-Puzzle/product-reviews/B00GY0PQZ4/ref=cm_cr_pr_btm_link_%d?ie=UTF8&amp%%3BshowViewpoints=1&amp%%3BsortBy=recent&pageNumber=%d"
     WordGenius ="http://www.amazon.com/Word-Genius-Challenging-Exercise-Puzzle/product-reviews/B01A0MWG40/ref=cm_cr_pr_btm_link_%d?ie=UTF8&showViewpoints=1&sortBy=recent&pageNumber=%d"
-    content = downWeb(WordGenius,page)
-    comments = matchRe(content)
-    savefile = saveToExcel(comments)
-    #savefile(comments)
+
+    # 多进程爬取数据
+    for each in range(0,page):
+        page = each +1
+        url = WordGenius %(page, page)
+        p = Process(target=runMultiple, args=(url,))
+        p.start()
+        p.join()
