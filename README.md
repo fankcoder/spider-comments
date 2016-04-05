@@ -10,7 +10,7 @@ appannie-spider-comments/README.md
 ### 介绍&说明
 分别对amazon(亚马逊)和appannie(app安妮)上的游戏评论爬取。
 
-#### amazon(requests + BeautifulSoup + xlwt)
+#### amazon(requests + BeautifulSoup + xlwt + 多进程)
 
 同一ip地址在短时间内大量的请求amazon服务器，会强制跳转到验证码页面，经过验证码确认后才可继续正常访问
 
