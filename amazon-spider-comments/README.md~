@@ -1,0 +1,4 @@
+#### ------requirements------
+requests
+xlwt
+BeautifulSoup

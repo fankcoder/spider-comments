@@ -24,8 +24,8 @@ def loginWeb(url):
     postdata = {
             'csrfmiddlewaretoken':csrftoken,
             'next':'/dashboard/home/',
-            'username':'zf.ice@163.com',
-            'password':'syqc19920928',
+            'username':'ynt30869@figjs.com',
+            'password':'thevmorgEej6',
             }
     
     s.headers=headers
